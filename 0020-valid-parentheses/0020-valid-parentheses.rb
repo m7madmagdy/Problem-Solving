@@ -3,16 +3,16 @@
 def is_valid(s)
   stack = []
 
-  s.chars.each do |char|
+  s.each_char do |char|
     case char
-    when '(', '{', '['
-      stack.push(char)
-    when ')'
-      return false if stack.empty? || stack.pop != '('
-    when '}'
-      return false if stack.empty? || stack.pop != '{'
-    when ']'
-      return false if stack.empty? || stack.pop != '['
+        when '(', '{', '['
+          stack.push(char)
+        when ')'
+          return false if stack.empty? || stack.pop != '('
+        when '}'
+          return false if stack.empty? || stack.pop != '{'
+        when ']'
+          return false if stack.empty? || stack.pop != '['
     end
   end
 
